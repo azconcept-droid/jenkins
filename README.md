@@ -14,7 +14,7 @@ cd jenkins
 ```
 bash install-jenkins.sh
 ```
-4. Go to http://<your-ip-address>:8080
+4. Go to
 ```
 http://<your-ip-addr>:8080
 ```
