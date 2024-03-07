@@ -1,6 +1,9 @@
 Using docker approach
 ===
 
+### Prerequisite
+**Install Docker**
+
 1. cd into this directory
 ```
 cd docker
