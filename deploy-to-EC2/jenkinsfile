@@ -2,10 +2,10 @@ pipeline {
     agent any
     
     environment {
-        SSH_KEY = credentials('your-ssh-key-id') // Add your Jenkins credentials ID for the SSH private key
-        EC2_SERVER = 'your-ec2-instance-ip' // Replace with your EC2 instance IP or DNS
-        SSH_USER = 'your-ssh-username' // Replace with your SSH username
-        REMOTE_DIR = '/path/to/remote/directory' // Replace with the path to your remote directory
+        SSH_KEY = credentials('0d5f8946-884d-4d62-bec5-7097b65ecd6e') // Add your Jenkins credentials ID for the SSH private key
+        EC2_SERVER = '16.170.247.174' // Replace with your EC2 instance IP or DNS
+        SSH_USER = 'ubuntu' // Replace with your SSH username
+        REMOTE_DIR = '/opt/' // Replace with the path to your remote directory
     }
 
     stages {

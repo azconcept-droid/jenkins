@@ -1,22 +1,20 @@
-# Jenkins
+Jenkins
+===
+Open source automation server. That helps developer automate the process of building, testing and deploying software. It was initially created to automate the build process for Java programming language. It was written in java. Automating repetitive tasks such as building, testing and deployment.
 
-Jenkins installation
-======
+## Why jenkins ?
+1. Jenkins uses plugins
+2. Support integrations with other tools
+3. CI/CD: Any changes made to the code is automatically build, tested and deployed.
+4. Jenkins script is written in domain specific language called Groovy.
 
-1. Run the script install-jenkins.sh
-```
-bash install-jenkins.sh
-```
+#### Other cicd tools: Bamboo, Buildbot, Travis CI, Apache, Gump (java project), Circle CI.
 
-2. Go to http://<your-ip-address>:8080
-```
-http://<your-ip-addr>:8080
-```
+## Features
+1. Easy installation
+2. Easy configuration
+3. Many Plugins
+4. Extensible
+5. Distributed
 
-3. Login by generating a key using this command, copy and paste the key to login
-```
-sudo cat /var/lib/jenkins/secrets/initial 
-```
-> 213f1b96a147417c911898c2a7a6ad57
-
-4. Click on install recomended plugins and fill the form
+### Enterprise jenkins is : CloudBees.

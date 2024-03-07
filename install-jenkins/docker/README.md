@@ -19,7 +19,7 @@ sudo docker ps
 ```
 5. Go to connect to your jenkins contianer
 ```
-http://<ip-address>:8010
+http://<ip-address>:8080
 ```
 6. Login into your jenkins container
 ```
