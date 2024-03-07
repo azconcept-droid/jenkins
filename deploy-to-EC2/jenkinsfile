@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    
+    environment {
+        SSH_KEY = credentials('your-ssh-key-id') // Add your Jenkins credentials ID for the SSH private key
+        EC2_SERVER = 'your-ec2-instance-ip' // Replace with your EC2 instance IP or DNS
+        SSH_USER = 'your-ssh-username' // Replace with your SSH username
+        REMOTE_DIR = '/path/to/remote/directory' // Replace with the path to your remote directory
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Assuming you are using Git for version control
+                git 'https://github.com/your/repo.git'
+            }
+        }
+
+        stage('Deploy to EC2') {
+            steps {
+                script {
+                    // Copy your SSH private key to the Jenkins workspace
+                    withCredentials([file(credentialsId: 'SSH_KEY', variable: 'SSH_KEY_FILE')]) {
+                        sh "cp ${SSH_KEY_FILE} ~/.ssh/id_rsa"
+                    }
+
+                    // Set appropriate permissions for the private key
+                    sh 'chmod 600 ~/.ssh/id_rsa'
+
+                    // SSH into the EC2 instance and deploy
+                    sh "ssh -i ~/.ssh/id_rsa ${SSH_USER}@${EC2_SERVER} 'cd ${REMOTE_DIR} && git pull origin master && ./deploy.sh'"
+                }
+            }
+        }
+    }
+}
